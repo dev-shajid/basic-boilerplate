@@ -205,3 +205,13 @@ export default function Form(){
 ```javascript
     formik.values.fullName
 ```
+---
+**Set all value after fetching Formik and useEffect**
+```javascript
+    useEffect(() => {
+        async function setInitialValues() {
+            if (GetCourse.data) await formik.setValues(GetCourse.data)
+        }
+        setInitialValues();
+    }, [GetCourse.data])
+```
